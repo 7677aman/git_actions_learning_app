@@ -28,6 +28,8 @@ jobs:
 
   deploy:
     needs: build
+    runs-on: ubuntu-latest
+
     steps:
       - uses: CDNievas/heroku-action@v1.0 # This is the action
         with:
