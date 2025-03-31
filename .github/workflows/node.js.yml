@@ -31,9 +31,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: npm i -g heroku
-      - uses: CDNievas/heroku-action@v1.0 # This is the action
+      - name: Trigger deployment
+        uses: sws2apps/render-deployment@main #consider using pin for dependabot auto update
         with:
-          heroku_email: "${{secrets.HEROKU_EMAIL}}"
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "git_hub_actions_learning"
+          serviceId: ${{ secrets.RENDER_SERVICE_ID }}
+          apiKey: ${{ secrets.RENDER_API_KEY }}
+          multipleDeployment: false #optional, default true
