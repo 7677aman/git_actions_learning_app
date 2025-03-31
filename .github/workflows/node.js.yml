@@ -31,6 +31,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - run: npm i heroku
       - uses: CDNievas/heroku-action@v1.0 # This is the action
         with:
           heroku_email: "${{secrets.HEROKU_EMAIL}}"
